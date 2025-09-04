@@ -1,0 +1,43 @@
+import { useState } from 'react' //Hook que permite manejar estado en componentes funcionales.
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+/*
+
+*/
+const user={ //Definiendo un objeto con propiedades.
+  name: "Natanahel Fernandez",
+  imageUrl : 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize : 90,
+  backgroundColor : 'purple'
+};
+
+export default function Profile(){
+  return(
+        <>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={'Foto de ' + user.name}
+        style={{ //Objeto
+          width: user.imageSize,
+          height: user.imageSize,
+          backgroundColor: user.backgroundColor,
+          padding: 20,
+        }}
+      />
+    </>
+  ) 
+}
+
+//export default MyButton
+
+ //Exporta mi componente para que pueda ser importado en otros archivos.
+
+/*¿Que quiere decir Hook en react?
+Permite tener estados dentro de un componente funcional.
+¿Qué quiere decir estado?
+Datos que pueden cambiar con el tiempo y que cuando cambian, React
+vuelve a renderizar el componente para reflejar esos cambios en la interfaz de usuario.
+*/
