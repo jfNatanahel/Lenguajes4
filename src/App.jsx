@@ -30,7 +30,9 @@ export default function Profile(){
       multiple onChange={handFileChange} //funcion que lea el archivo usando FileReader y lo guarde en un estado para mostrarlo despues.
       //multiple = permite seleccionar multiples archivos.
       />
-      {imageSrc && <img src={imageSrc} alt="Imagen seleccionada" className='image-up-load' />} 
+      <div>
+        {imageSrc && <img src={imageSrc} alt="Imagen seleccionada" className='image-up-load' />} 
+      </div>
     </>
   ) 
 }
