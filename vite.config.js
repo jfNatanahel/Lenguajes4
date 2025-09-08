@@ -8,5 +8,5 @@ Por eso hay que agregar la propiedad base.
 */
 export default defineConfig({
   plugins: [react()],
-  base: '/react-mi-primer-proyecto/',
+  base: '/Lenguajes4/',
 })
