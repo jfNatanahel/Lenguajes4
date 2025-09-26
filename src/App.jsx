@@ -2,44 +2,40 @@ import { useState } from 'react' //Hook que permite manejar estado en componente
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Contacto from './pages/Contacto'
+import Inicio from './pages/Inicio'
+import { Routes, Route, Link } from 'react-router'
+import TrabajoPractico from './pages/TrabajoPractico'
+
 /*
 
 */
 
 
-export default function Profile(){
-  const [imageSrc, setImageSrc] = useState([]); //Estado para guardar la URL.
-  const handFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) { //sartsWitch devuelve valores booleano.
-      const reader = new FileReader();//Creamos un objeto FileReader.
-      reader.onload = () => setImageSrc(reader.result)
-      reader.readAsDataURL(file);
-    }else{
-      alert("Por favor seleccione un archivo de imagen valido");
-    }
-    
-  };
+export default function App(){
   return(
     <> 
-    <h1>TP1</h1>
-    <h2>Jose Natanahel Fernandez</h2>
-    <p>Crear una página HTML que contenga una estructura básica y un botón de
-      tipo File para subir una imagen. La misma tendrá que ser validada que se
-      trata de una imagen y mostrar dentro del documento html el contenido
-      de la misma. Para esta tarea deberá utilizar la API File</p>
-      <input 
-      type="file" 
-      accept='image/*' 
-      multiple onChange={handFileChange} //funcion que lea el archivo usando FileReader y lo guarde en un estado para mostrarlo despues.
-      //multiple = permite seleccionar multiples archivos.
-      />
-      <div>
-        {imageSrc && <img src={imageSrc} alt="Imagen seleccionada" className='image-up-load' />} 
-      </div>
+    <div>
+      {/*Menu de navegacion*/}
+        <nav>
+          <Link to="/">Inicio</Link> | {" "}
+          <Link to="/trabajopractico">TrabajoPractico</Link> | {" "}
+          <Link to="/contacto">Contacto</Link> |{" "}
+        </nav>
+    </div>
+
+      {/*Contenido dinamico segun la ruta*/}
+    <Routes>
+      <Route path='/' element={<Inicio/>}></Route>
+      <Route path='/trabajopractico' element={<TrabajoPractico/>}></Route>
+      <Route path="/contacto" element={<Contacto/>}></Route>
+    </Routes>
+    <h1>Este contenido se muestra en todas las pages </h1>
+      
     </>
   ) 
 }
+
 
 //export default MyButton
 

@@ -1,10 +1,13 @@
 import { StrictMode } from 'react' //Activa advertencias adicionales y chequeos de buenas practicas.
 import { createRoot } from 'react-dom/client' //FUncion que monta mi app React dentro del HTML.
 import './index.css' //Importo los estilos globales.
+import { BrowserRouter } from 'react-router'
 import App from './App.jsx' //Importo el componente principal de mi app.
 createRoot(document.getElementById('root')).render( //Dibuja mi app dentro del contendor.
   <StrictMode>
-    <App />
+    <BrowserRouter basename='/Lenguajes4/'>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )
 /*¿Que hace createRoot?
