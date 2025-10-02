@@ -28,7 +28,7 @@ function Contacto(){
 
     try {
         // Llamada a la Edge Function de Supabase
-        const res = await fetch('https://fbahrekzvewjjxufmcep.functions.supabase.co/send-email', {
+        const res = await fetch('https://fbahrekzvewjjxufmcep.supabase.co/formulario-contacto', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
