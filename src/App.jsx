@@ -7,6 +7,7 @@ import Inicio from './pages/Inicio'
 import { Routes, Route, Link } from 'react-router'
 import TrabajoPractico from './pages/TrabajoPractico'
 import Servicios from './pages/Servicios'
+import Clima from './pages/Clima'; //Exporto el nombre del archivo, no la ruta.
 
 /*
 
@@ -21,8 +22,9 @@ export default function App(){
         <nav>
           <Link to="/">Inicio</Link> | {" "}
           <Link to="/trabajopractico">TrabajoPractico</Link> | {" "}
-          <Link to="/contacto">Contacto</Link> |{" "}
-          <Link to="/servicios">Servicios</Link>
+          <Link to="/contacto">Contacto</Link> | {" "}
+          <Link to="/servicios">Servicios</Link> | {" "}
+          <Link to="/clima">Clima</Link> | {" "} 
         </nav>
     </div>
 
@@ -32,8 +34,11 @@ export default function App(){
       <Route path='/trabajopractico' element={<TrabajoPractico/>}></Route>
       <Route path="/contacto" element={<Contacto/>}></Route>
       <Route path="/servicios" element={<Servicios/>}></Route>
+      <Route path="/clima" element={<Clima/>}></Route>
     </Routes>
-    <h1>Este contenido se muestra en todas las pages </h1>
+    <div style={{textAlign: 'center', marginTop: '2rem' , color: 'orange'}}>
+      <h2 >This content is displayed on all pages</h2>
+    </div>
       
     </>
   ) 
