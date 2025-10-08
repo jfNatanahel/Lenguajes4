@@ -21,3 +21,5 @@ Cuando un usuario completa el formulario, se envía un correo electrónico al ad
 3. La **Edge Function** valida los datos y llama a la API de SendGrid.
 4. SendGrid entrega el correo al administrador (`TO_EMAIL`).
 5. (Opcional) El mensaje se guarda en la base de datos para consultas posteriores..
+
+

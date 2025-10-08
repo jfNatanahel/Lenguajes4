@@ -1,0 +1,8 @@
+/* Imagen dentro de la card */
+.card img {
+  width: 50%;
+  height: 200px;
+  object-fit: cover; /* ✅ mantiene proporción, recorta si es necesario */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
